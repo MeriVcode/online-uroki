@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="lesson-title" content="Маршрут понимания">
+    <meta name="lesson-grade" content="2">
+    <meta name="lesson-subject" content="Математика">
+    <meta name="lesson-type" content="Тренажёр">
+    <meta name="lesson-description" content="Пошаговые вычисления и осмысленное чтение текстовых задач.">
+    <meta name="lesson-cover" content="covers/marshrut.webp">
+    <meta name="lesson-tags" content="Счёт;Текстовые задачи;Самопроверка">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Маршрут понимания — математика, 2 класс</title>
+<style>
+:root{--ink:#253547;--muted:#5b6d7c;--cream:#f7f6f0;--dark:#244f66;--blue:#087f87;--gold:#edb34e;--edge:#cbdce1;--good:#11694e;--bad:#a33b34;--white:white}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(150deg,#eef5f3,#f9f2df);color:var(--ink);font-family:system-ui,"Segoe UI",Arial,sans-serif;font-size:18px;min-height:100vh}
+header{max-width:1060px;margin:20px auto 0;padding:15px 20px;display:flex;gap:18px;justify-content:space-between;align-items:center}header h1{font-size:clamp(23px,4vw,33px);margin:2px 0 5px;font-weight:800;line-height:1.1}header p{margin:0;color:var(--muted);font-size:14px}.logo{display:flex;align-items:center;gap:14px}.mark{height:62px;width:62px;background:#e2f0ec;border:2px solid #a1cbca;border-radius:17px;display:grid;place-items:center;font-size:35px;flex-shrink:0}
+main{max-width:1060px;margin:0 auto;padding:0 20px 40px}.nav{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0 16px}.nav button{font-size:15px;padding:13px 10px;border-radius:13px;border:2px solid var(--edge);background:#fff;color:#35576a;font-weight:700;cursor:pointer}.nav button.on{background:#24546b;color:white;border-color:#24546b}
+.card{background:#fff;border:1px solid #dbe3e4;box-shadow:0 10px 28px #274b5915;border-radius:22px;padding:clamp(18px,4vw,36px)}.eyebrow{color:#237c86;text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:900}.card h2{font-size:clamp(22px,4vw,30px);line-height:1.2;margin:9px 0 12px}.muted{color:var(--muted);font-size:16px}.task{font-size:clamp(19px,3vw,25px);font-weight:680;line-height:1.45;margin:18px 0}.problem{font-weight:590;line-height:1.65;background:#f4f7f7;border-left:5px solid var(--blue);padding:18px;border-radius:10px;font-size:21px;margin:18px 0}.progress{height:10px;background:#e9f0ef;border-radius:999px;overflow:hidden;margin:16px 0 6px}.progress>div{height:100%;width:0%;transition:width .25s;background:linear-gradient(90deg,#52b4aa,#187f82);border-radius:999px}.small{font-size:14px;color:var(--muted)}.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:10px;margin:12px 0 18px}.options button{padding:17px 15px;border-radius:14px;border:2px solid var(--edge);background:#f8fbfa;color:var(--ink);cursor:pointer;font-size:18px;font-weight:620;text-align:left;line-height:1.4;min-height:70px}.options button:hover{border-color:#90babd}.options button.selected{background:#e9f7f1;border-color:#137f80;box-shadow:inset 0 0 0 1px #137f80}.field{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.field input{font:inherit;font-size:26px;font-weight:730;border:2px solid var(--edge);padding:12px 14px;border-radius:12px;width:135px;color:var(--ink)}.field input:focus{outline:3px solid #a5ded7;border-color:#178c8c}
+.btn{border:0;border-radius:12px;padding:14px 22px;font-size:17px;font-weight:750;cursor:pointer;background:var(--blue);color:white;min-height:52px}.btn:hover{filter:brightness(.92)}.btn.secondary{background:#e5eef0;color:#275164}.btn.light{background:#fff4d8;color:#725026;border:1px solid #ecd3a0}.controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.feedback{min-height:30px;margin:15px 0 0;font-weight:650;line-height:1.4}.feedback.good{color:var(--good)}.feedback.bad{color:var(--bad)}.hint{background:#fff6e4;border:1px solid #efd49e;padding:14px 16px;border-radius:12px;font-size:16px;margin:13px 0}.hidden{display:none!important}.stepnum{font-size:15px;color:var(--muted);font-weight:760;margin:0}.badge{display:inline-block;border-radius:999px;background:#edf2f2;color:#325766;padding:7px 11px;font-size:13px;font-weight:780}.result{padding:22px;background:#eef8f1;border-radius:16px;border:1px solid #c7e4d0;margin-top:16px}.split{display:grid;grid-template-columns:1fr 1fr;gap:15px}.note{font-size:14px;border-top:1px solid #e6eceb;padding-top:15px;margin-top:25px;color:#586b76}.okey{font-size:23px;font-weight:800;color:#245c59}.question-shape{white-space:pre-line;font-size:18px;font-weight:650}
+@media(max-width:660px){body{font-size:16px}header{padding:15px 14px}.mark{height:48px;width:48px;font-size:28px}.nav{gap:5px}.nav button{font-size:12px;padding:11px 5px}main{padding:0 10px 25px}.card{padding:18px}.options{grid-template-columns:1fr}.options button{min-height:57px}.split{grid-template-columns:1fr}.problem{font-size:19px}}
+
+/* Поля ответов: светлая тема независимо от браузера и системы. */
+:root { color-scheme: light; }
+.field input, input[type="text"], input[type="number"], textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #172c3b !important;
+  -webkit-text-fill-color: #172c3b !important;
+  caret-color: #172c3b !important;
+  border: 2px solid #8caab7;
+  opacity: 1;
+}
+.field input::placeholder, input::placeholder, textarea::placeholder {
+  color: #607785 !important;
+  -webkit-text-fill-color: #607785 !important;
+  opacity: 1;
+}
+.field input:focus {
+  background: #ffffff !important;
+  color: #172c3b !important;
+  outline: 3px solid #a5ded7;
+  border-color: #178c8c;
+}
+.field input:-webkit-autofill,
+.field input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #172c3b !important;
+}
+</style>
+</head>
+<body>
+<header><div class="logo"><div class="mark" aria-hidden="true">🚂</div><div><h1>Маршрут понимания</h1><p>2 класс · закрепляем вычисления и учимся читать задачи</p></div></div><span class="badge">Учебная миссия</span></header>
+<main>
+<nav class="nav" aria-label="Разделы задания">
+<button type="button" data-tab="calc" class="on">1 · Считаю</button>
+<button type="button" data-tab="grape">2 · Виноград</button>
+<button type="button" data-tab="tulip">3 · Тюльпаны</button>
+</nav>
+<section class="card" id="stage" aria-live="polite"></section>
+<p class="note">Правило: внимательно прочитай задание, выполни его и нажми «Проверить». Если нужно, открой текст задачи ещё раз.</p>
+</main>
+<script>
+'use strict';
+const examples = [
+ {q:'46 + 2',a:48,reason:'Прибавляю 2 к 6 единицам: 6 + 2 = 8.',opts:['Прибавляю 2 к 6 единицам: 6 + 2 = 8.','Прибавляю 2 десятка к 4 десяткам.','Прибавляю 2 к четырём десяткам.']},
+ {q:'36 + 20',a:56,reason:'3 десятка + 2 десятка = 5 десятков; 6 единиц остаются.',opts:['3 десятка + 2 десятка = 5 десятков; 6 единиц остаются.','6 единиц + 2 единицы = 8 единиц.','20 прибавляю только к 6 единицам.']},
+ {q:'58 − 3',a:55},
+ {q:'76 − 30',a:46},
+ {q:'46 + 4',a:50,reason:'6 единиц + 4 единицы = 10 единиц, получается новый десяток.',opts:['6 единиц + 4 единицы = 10 единиц, получается новый десяток.','К 4 десяткам прибавляю 4 десятка.','46 + 4 = 44.']},
+ {q:'95 + 5',a:100},
+ {q:'30 − 7',a:23,reason:'30 = 20 + 10; из 10 вычитаю 7, остаётся 3; 20 + 3 = 23.',opts:['30 = 20 + 10; из 10 вычитаю 7, остаётся 3; 20 + 3 = 23.','Из числа 30 вычитаю 7 десятков.','Из 3 десятков вычитаю 7 десятков.']},
+ {q:'50 − 6',a:44,reason:'50 = 40 + 10; 10 − 6 = 4; 40 + 4 = 44.',opts:['50 = 40 + 10; 10 − 6 = 4; 40 + 4 = 44.','50 = 50 + 0; 0 − 6 = 6.','5 десятков − 6 десятков = 44.']}
+];
+const problemConfig={
+ grape:{title:'Посылка № 1. Виноград',text:'После того как из коробки продали 12 кг винограда, в ней осталось ещё 6 кг. Сколько килограммов винограда было в коробке сначала?',stages:[
+ {type:'intro',question:'Прочитай условие. Пока не вычисляй: сначала разберись, что известно, а что надо узнать.'},
+ {type:'pick',question:'Что произошло с виноградом?',options:['Часть винограда продали, часть осталась.','В коробку добавили ещё 12 кг.','Продали весь виноград, ничего не осталось.'],correct:0},
+ {type:'pick',question:'Какие числа известны из условия?',options:['Продали 12 кг, осталось 6 кг.','Сначала было 12 кг, продали 6 кг.','Продали 6 кг, осталось 12 кг.'],correct:0},
+ {type:'pick',question:'Что НЕИЗВЕСТНО в задаче? Число пока не называем.',options:['Сколько винограда было в коробке до продажи.','Сколько килограммов винограда продали.','Сколько килограммов осталось.'],correct:0},
+ {type:'pick',question:'Мы ещё не решили задачу. Как обозначить неизвестное количество на схеме?',options:['БЫЛО ? кг → ПРОДАЛИ 12 кг → ОСТАЛОСЬ 6 кг','БЫЛО 12 кг → ПРОДАЛИ ? кг → ОСТАЛОСЬ 6 кг','БЫЛО 6 кг → ПРОДАЛИ 12 кг → ОСТАЛОСЬ ? кг'],correct:0},
+ {type:'pick',question:'Какое выражение поможет узнать, сколько винограда было до продажи?',options:['12 + 6','12 − 6','12 − 12'],correct:0},
+ {type:'pick',question:'Почему складываем 12 и 6?',options:['Чтобы найти всё количество: сколько продали и сколько осталось.','Потому что в условии есть слово «продали».','Потому что 12 больше 6.'],correct:0},
+ {type:'number',question:'Теперь вычисли: 12 + 6 = ? Запиши полученное число. Сколько килограммов было до продажи?',answer:18,unit:'кг'},
+ ]},
+ tulip:{title:'Посылка № 2. Тюльпаны',text:'Бабушка посадила 10 луковиц тюльпанов, а мама — на 7 луковиц больше. Сколько всего луковиц тюльпанов посадили бабушка и мама?',stages:[
+ {type:'intro',question:'Прочитай задачу вслух. Что означает «на 7 больше»?'},
+ {type:'pick',question:'Что в задаче известно точно?',options:['Бабушка — 10 луковиц; мама — на 7 луковиц больше.','Мама — 7 луковиц; бабушка — 10.','Всего посадили 17 луковиц.'],correct:0},
+ {type:'pick',question:'Что нужно узнать сначала?',options:['Сколько луковиц посадила мама.','Сколько луковиц было в магазине.','Сколько луковиц посадили всего.'],correct:0},
+ {type:'number',question:'Сколько луковиц посадила мама? Заполни первый шаг: 10 + 7 = ?',answer:17,unit:'луковиц'},
+ {type:'pick',question:'Можно ли уже ответить на главный вопрос?',options:['Нет, пока мы узнали только количество у мамы.','Да, 17 — это всего у бабушки и мамы.'],correct:0},
+ {type:'number',question:'Сколько посадили всего? Заполни второй шаг: 10 + 17 = ?',answer:27,unit:'луковиц'},
+ ]}
+};
+let active='calc';const state={calc:{idx:0,phase:'answer',selected:-1,attempts:0,wrong:0,explanations:0},grape:{idx:0,selected:-1,attempts:0,wrong:0,showText:true},tulip:{idx:0,selected:-1,attempts:0,wrong:0,showText:true}};
+const $=id=>document.getElementById(id);
+function escapeHtml(s){return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;')}
+function switchTab(tab){active=tab;document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('on',b.dataset.tab===tab));render();}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
+function render(){if(active==='calc')renderCalc();else renderProblem(active)}
+function bar(now,total){return `<div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${now}"><div style="width:${100*now/total}%"></div></div><p class="small">Шаг ${Math.min(total,now+1)} из ${total}</p>`}
+function showFeedback(s,ok){const el=$('fb'); if(!el)return;el.textContent=s;el.className='feedback '+(ok?'good':'bad')}
+function inputValue(){const node=$('answer');return node?node.value.trim():''}
+function textInput(){return '<div class="field"><input id="answer" inputmode="numeric" autocomplete="off" aria-label="Введи ответ" placeholder="?" maxlength="4"><span class="muted">Число вводи после вычисления.</span></div>'}
+// Варианты перемешиваются для каждого задания, но порядок не прыгает при повторном показе условия.
+// Проверка по исходному индексу: правильность не зависит от места кнопки на экране.
+const optionOrder = new Map();
+let lastCorrectPosition = -1;
+function shuffleItems(items){
+ for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]]}
+ return items;
+}
+function optionIndices(key, arr, correctIndex){
+ if(optionOrder.has(key))return optionOrder.get(key);
+ let candidates=arr.map((_,i)=>i).filter(i=>i!==lastCorrectPosition);
+ // Первый правильный ответ при запуске — не в первой позиции.
+ if(lastCorrectPosition===-1 && candidates.length>1)candidates=candidates.filter(i=>i!==0);
+ const target=candidates[Math.floor(Math.random()*candidates.length)];
+ lastCorrectPosition=target;
+ const others=shuffleItems(arr.map((_,i)=>i).filter(i=>i!==correctIndex));
+ others.splice(target,0,correctIndex);
+ optionOrder.set(key,others);
+ return others;
+}
+function optionsMarkup(arr,key,correctIndex){
+ const order=optionIndices(key,arr,correctIndex);
+ return `<div class="options" role="group" aria-label="Варианты ответа">${order.map(i=>`<button type="button" class="choice" data-choice="${i}">${escapeHtml(arr[i])}</button>`).join('')}</div>`;
+}
+function hookChoice(){document.querySelectorAll('.choice').forEach(btn=>{
+ if(Number(btn.dataset.choice)===state[active].selected)btn.classList.add('selected');
+ btn.addEventListener('click',()=>{document.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected');state[active].selected=Number(btn.dataset.choice);showFeedback('Вариант выбран. Теперь нажми «Проверить».',true)})
+})}
+function hookEnter(check){const inp=$('answer');if(inp)inp.addEventListener('keydown',e=>{if(e.key==='Enter')check()})}
+function renderCalc(){const s=state.calc;let x=examples[s.idx];if(!x){$('stage').innerHTML=`<div class="eyebrow">Станция счёта завершена</div><h2>Маршрут вычислений пройден!</h2><div class="result"><div class="okey">Верных примеров: 8 из 8</div><p>Ошибочных попыток: ${s.wrong}. Объяснений способа: ${s.explanations} из 5.</p></div><div class="controls"><button class="btn" onclick="switchTab('grape')">Перейти к задаче о винограде</button><button class="btn secondary" onclick="resetCalc()">Пройти счёт заново</button></div>`;return}
+const explain=!!x.reason;let explanationScreen=s.phase==='explain';
+$('stage').innerHTML=`<div class="eyebrow">Станция 1 · Самостоятельный счёт</div><h2>${explanationScreen?'Почему именно так?':'Реши и запиши ответ'}</h2>${bar(s.idx,examples.length)}<div class="task">${escapeHtml(x.q)} = ${explanationScreen?x.a:'?'}</div>${explanationScreen?`<p class="muted">Выбери правильный способ вычисления.</p>${optionsMarkup(x.opts,`calc-${s.idx}`,x.opts.indexOf(x.reason))}`:textInput()}<p id="fb" class="feedback" role="status"></p><div class="controls"><button id="check" class="btn">Проверить</button></div>`;
+if(explanationScreen)hookChoice();else{$('answer').focus();hookEnter(checkCalc)}$('check').addEventListener('click',checkCalc)
+}
+function checkCalc(){let s=state.calc,x=examples[s.idx];if(s.phase==='explain'){
+ if(s.selected<0){showFeedback('Сначала выбери объяснение.',false);return}
+ if(x.opts[s.selected]!==x.reason){s.wrong++;showFeedback('Подумай ещё раз. Какие десятки или единицы изменились?',false);return}
+ s.explanations++;s.idx++;s.selected=-1;s.phase='answer';renderCalc();return
+}
+const raw=inputValue();if(!raw){showFeedback('Введи число, потом нажми «Проверить».',false);return}
+if(!/^\d+$/.test(raw)||Number(raw)!==x.a){s.wrong++;s.attempts++;showFeedback('Пока неверно. Проверь десятки и единицы. Попробуй ещё раз.',false);if(s.attempts>=2){const hint=document.createElement('div');hint.className='hint';hint.textContent='Подсказка: попробуй разложить число на десятки и единицы, а затем вычисли.';if(!$('stage').querySelector('.hint'))$('fb').after(hint)}return}
+s.attempts=0;s.selected=-1;if(x.reason){s.phase='explain';renderCalc()}else{s.idx++;renderCalc()}
+}
+function renderProblem(tab){const cfg=problemConfig[tab],s=state[tab],steps=cfg.stages,x=steps[s.idx];if(!x){$('stage').innerHTML=`<div class="eyebrow">Маршрут завершён</div><h2>${escapeHtml(cfg.title)}</h2><div class="result"><div class="okey">Задача разобрана!</div><p>Ошибочных попыток: ${s.wrong}. Ты прошёл путь от чтения условия до объяснения ответа.</p></div><div class="controls"><button class="btn secondary" id="restart">Повторить задачу</button>${tab==='grape'?'<button class="btn" id="nextProb">Задача о тюльпанах</button>':''}</div>`;$('restart').onclick=()=>{for(const key of optionOrder.keys())if(key.startsWith(tab+'-'))optionOrder.delete(key);state[tab]={idx:0,selected:-1,attempts:0,wrong:0,showText:true};render()};if($('nextProb'))$('nextProb').onclick=()=>switchTab('tulip');return}
+let showText=s.idx===0||s.showText;let content='';if(x.type==='intro')content=`<p class="muted">${escapeHtml(x.question)}</p><div class="problem">${escapeHtml(cfg.text)}</div><p class="muted">Неизвестное количество сначала обозначим знаком «?». Число запишем только после выбора действия.</p>`;
+else {content=`${showText?`<div class="problem">${escapeHtml(cfg.text)}</div>`:''}<div class="controls"><button class="btn secondary" id="toggleText">${showText?'Скрыть текст задачи':'Показать условие ещё раз'}</button></div><div class="task">${escapeHtml(x.question)}</div>`;if(x.type==='pick')content+=optionsMarkup(x.options,`${tab}-${s.idx}`,x.correct);if(x.type==='number')content+=textInput()+`<span class="badge">${escapeHtml(x.unit)}</span>`}
+$('stage').innerHTML=`<div class="eyebrow">${escapeHtml(cfg.title)}</div><h2>${x.type==='intro'?'Читаем и разбираемся':'Разберись в задаче'}</h2>${bar(s.idx,steps.length)}${content}<p class="feedback" id="fb" role="status"></p><div class="controls"><button class="btn" id="check">${x.type==='intro'?'Начать разбор':'Проверить'}</button></div>`;
+if(x.type==='pick')hookChoice();if(x.type==='number'){$('answer').focus();hookEnter(()=>checkProblem(tab))}if($('toggleText'))$('toggleText').onclick=()=>{s.showText=!s.showText;renderProblem(tab)};$('check').onclick=()=>checkProblem(tab)
+}
+function checkProblem(tab){const cfg=problemConfig[tab],s=state[tab],x=cfg.stages[s.idx];if(x.type==='intro'){s.idx++;s.selected=-1;s.showText=false;renderProblem(tab);return}
+if(x.type==='pick'){
+ if(s.selected<0){showFeedback('Сначала выбери ответ.',false);return}
+ if(s.selected!==x.correct){s.wrong++;showFeedback('Не спеши. Вернись к условию и найди доказательство.',false);return}
+}else if(x.type==='number'){
+ const v=inputValue();if(!v){showFeedback('Сначала введи число.',false);return}
+ if(!/^\d+$/.test(v)||Number(v)!==x.answer){s.wrong++;showFeedback('Проверь, на какой вопрос отвечаешь. Перечитай текст.',false);return}
+}
+s.idx++;s.selected=-1;s.showText=false;renderProblem(tab)
+}
+function resetCalc(){for(const key of optionOrder.keys())if(key.startsWith('calc-'))optionOrder.delete(key);state.calc={idx:0,phase:'answer',selected:-1,attempts:0,wrong:0,explanations:0};switchTab('calc')}
+render();
+</script>
+</body></html>

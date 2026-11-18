@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru"><head>
+    <meta name="lesson-title" content="Почтовый экспресс">
+    <meta name="lesson-grade" content="2">
+    <meta name="lesson-subject" content="Математика">
+    <meta name="lesson-type" content="Игра">
+    <meta name="lesson-description" content="Три игровые станции: вычисления, объяснение способов и решение задач.">
+    <meta name="lesson-cover" content="covers/express.webp">
+    <meta name="lesson-tags" content="Устный счёт;Текстовые задачи"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Почтовый экспресс — игра по математике, 2 класс</title>
+<style>
+:root{--ink:#263a48;--muted:#667b86;--cyan:#0e7b84;--cyan2:#dff3f1;--accent:#e99445;--paper:#fffdf7;--line:#cce0dc;--good:#23784a;--bad:#aa4938}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;background:#edf5f3;color:var(--ink);line-height:1.45}
+.wrap{max-width:900px;margin:0 auto;padding:16px 16px 36px}.top{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:8px 0 15px;flex-wrap:wrap}.brand{font-weight:900;letter-spacing:.04em;font-size:clamp(17px,3vw,23px)}.pill{border:1px solid #b5dad5;border-radius:30px;background:white;padding:8px 14px;font-weight:700;font-size:13px;color:#206f73}
+.hero{background:#fffdf8;border:1px solid var(--line);border-radius:25px;padding:25px 22px;box-shadow:0 12px 35px #325b5330;overflow:hidden}.smallcap{display:inline-block;text-transform:uppercase;letter-spacing:.13em;font-weight:900;color:#0e7b84;font-size:12px}h1{font-size:clamp(26px,5vw,45px);line-height:1.12;margin:12px 0 12px;letter-spacing:-.025em}h2{font-size:clamp(23px,3.2vw,30px);line-height:1.2;margin:8px 0 18px}p{font-size:clamp(16px,2.4vw,20px);margin:12px 0;color:#425865}.lead{max-width:650px}.route{padding:18px;border-radius:19px;background:linear-gradient(180deg,#e9f8f5,#fef3de);border:1px solid #d4e9dd;margin:20px 0}.route svg{width:100%;display:block;height:auto;max-height:205px}.steps{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.step{border-radius:999px;padding:7px 12px;background:#f0f4f0;border:1px solid #d4ddd6;font-weight:700;color:#63756c;font-size:13px}.step.done{background:#d6f2e5;border-color:#a7d8bd;color:#286745}.step.active{background:#fff0d7;border-color:#e8bd75;color:#7a4b12}.btn{border:0;background:#0c7b82;color:#fff;cursor:pointer;border-radius:14px;padding:14px 22px;font:800 17px system-ui;box-shadow:0 4px 0 #07585d;min-height:48px}.btn:hover{filter:brightness(.96)}.btn:active{transform:translateY(2px);box-shadow:0 2px 0 #07585d}.btn:focus-visible,.option:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.btn.secondary{background:#eff8f6;color:#186a6e;box-shadow:none;border:2px solid #baded9}.btn.muted{background:#f5ebd9;color:#72501d;box-shadow:none}.btn.small{padding:8px 12px;min-height:38px;font-size:13px}.btn:disabled{opacity:.45;cursor:not-allowed}.taskmeta{font-size:14px;font-weight:900;letter-spacing:.02em;color:#0f777b}.progress{height:10px;border-radius:99px;background:#e2eae9;margin:13px 0 20px;overflow:hidden}.progress .bar{height:100%;width:0;background:#14898a;border-radius:99px;transition:width .25s}.tasktext{font-size:clamp(20px,3.2vw,30px);line-height:1.3;font-weight:800;margin:18px 0 22px;max-width:740px}.options{display:grid;gap:11px;margin:15px 0 22px}.option{border:2px solid #cadeda;background:#fff;border-radius:16px;text-align:left;min-height:60px;padding:13px 16px;font-size:clamp(17px,2.6vw,21px);font-weight:650;color:var(--ink);cursor:pointer;display:flex;gap:12px;align-items:center}.option .circle{width:26px;height:26px;border:2px solid #b2c9c2;border-radius:100%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:15px}.option.selected{border-color:#0c7b82;background:#e3f7f3}.option.selected .circle{background:#0c7b82;border-color:#0c7b82;color:white}.numinput{width:175px;max-width:100%;border:2px solid #afd0ca;background:white;border-radius:16px;padding:15px;font-size:28px;font-weight:900;text-align:center;color:var(--ink);margin:8px 0 18px}.feedback{min-height:0;border-radius:15px;padding:15px 17px;margin:14px 0;font-size:17px;font-weight:650}.feedback.good{background:#e0f4e7;color:#1e7245}.feedback.bad{background:#fff0e6;color:#8b442a}.controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:17px}.hint{font-size:14px;color:var(--muted)}.checkpoint{border-left:5px solid var(--accent);padding:10px 17px;background:#fff5e4;border-radius:5px 12px 12px 5px;margin:19px 0}.checkpoint p{margin:6px 0;font-size:18px}.small{font-size:14px;color:#59717a}.footer{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-top:16px;color:#627a79;font-size:13px}.badge{font-weight:900;color:#245b59;border:2px solid #b7d8cf;padding:10px;border-radius:16px;background:#e7f5ed;display:inline-block;margin:10px 0}.print{display:none}.mission-route{height:70px;border-radius:16px;background:#e7f6ef;border:1px solid #cee6dc;display:flex;align-items:center;gap:12px;padding:8px 15px;margin:14px 0 4px}.mini-train{font-size:33px;line-height:1;filter:drop-shadow(0 2px 1px #98aaa1);flex-shrink:0}.mini-rail{height:12px;background:repeating-linear-gradient(90deg,#9fc0b0 0 12px,#ebf3e9 12px 17px);border-top:3px solid #648f89;border-bottom:3px solid #648f89;border-radius:8px;flex:1;position:relative}.mini-rail .mini-fill{height:100%;background:#e9a052;width:0;transition:width .2s}.mini-target{font-size:27px;flex-shrink:0}.mission-progress{font-size:14px;font-weight:900;color:#2d7771;white-space:nowrap}@media(max-width:600px){.hero{padding:19px 15px;border-radius:20px}.wrap{padding:8px 9px 25px}.route{padding:7px}.options{gap:9px}.option{padding:11px}.btn{width:100%}.controls{display:block}.controls .btn{margin:7px 0}.steps{gap:5px}.step{font-size:11px;padding:6px 9px}}@media print{body{background:#fff}.top,.controls,.route,.footer{display:none}.hero{box-shadow:none}.print{display:block}}
+</style></head><body><main class="wrap"><header class="top"><div class="brand">🚂 ПОЧТОВЫЙ ЭКСПРЕСС</div><div class="pill">Математика • 2 класс</div></header><section class="hero" id="app" aria-live="polite"></section><div class="footer"><span>Читай задание → думай → отвечай → проверяй.</span><button type="button" class="btn secondary small" id="resetButton">Начать заново</button></div></main>
+<script>
+'use strict';
+const missions=[
+{title:'Рельсы счёта',subtitle:'Собери полные десятки',action:'После этого этапа вернись к учителю и реши примеры в тетради.',tasks:[
+ {type:'choice',q:'В числе 46 сколько десятков и единиц?',options:['4 десятка и 6 единиц','6 десятков и 4 единицы','46 десятков'],a:0,good:'46 = 40 + 6. Это 4 десятка и 6 единиц.',hint:'Первая цифра показывает десятки, вторая — единицы.'},
+ {type:'choice',q:'Сколько нужно прибавить к 46, чтобы получить 50?',options:['4','6','10'],a:0,good:'6 единиц + 4 единицы = 10 единиц. Получился новый десяток.',hint:'Посчитай от 46 до 50: 47, 48, 49, 50.'},
+ {type:'number',q:'Вычисли: 28 + 2 = ?',a:30,good:'8 + 2 = 10, поэтому 28 + 2 = 30.',hint:'Сначала дополни 8 единиц до 10.'},
+ {type:'choice',q:'Какая запись помогает объяснить 54 + 6?',options:['50 + (4 + 6)','54 + 60','5 + 4 + 6'],a:0,good:'50 + (4 + 6) = 50 + 10 = 60.',hint:'Разложи 54 на десятки и единицы.'},
+ {type:'number',q:'Вычисли: 57 + 3 = ?',a:60,good:'7 + 3 = 10. Значит, 57 + 3 = 60.',hint:'Каким числом станут 7 единиц и ещё 3 единицы?'}
+]},
+{title:'Посылки для станций',subtitle:'Сначала пойми задачу, затем выбери действие',action:'После этого этапа вернись к учителю и реши задачу в тетради.',tasks:[
+ {type:'choice',q:'Было 50 писем. Курьер забрал несколько. Осталось 46. Что требуется узнать?',options:['Сколько писем забрали','Сколько писем осталось','Сколько писем было'],a:0,good:'Верно: неизвестно количество писем, которые забрали.',hint:'Перечитай последнее предложение задачи.'},
+ {type:'choice',q:'Было 50 писем, осталось 46. Как узнать, сколько забрали?',options:['50 − 46','50 + 46','46 − 50'],a:0,good:'Чтобы найти, сколько забрали, из 50 вычтем 46.',hint:'Если часть писем забрали, стало меньше. Каким действием найдём пропавшую часть?'},
+ {type:'number',q:'Сколько писем забрал курьер? Запиши только число.',a:4,good:'50 − 46 = 4 письма. Проверка: 46 + 4 = 50.',hint:'Вспомни: 46 + 4 = 50.'},
+ {type:'choice',q:'В первом вагоне 26 посылок, во втором — на 4 больше. Какое действие нужно выполнить?',options:['26 + 4','26 − 4','26 + 26'],a:0,good:'«На 4 больше» — к числу 26 нужно прибавить 4.',hint:'Во втором вагоне больше или меньше посылок, чем в первом?'},
+ {type:'number',q:'Сколько посылок во втором вагоне?',a:30,good:'26 + 4 = 30 посылок.',hint:'6 единиц и ещё 4 единицы образуют десяток.'}
+]},
+{title:'Проверка машиниста',subtitle:'Найди ошибку и докажи ответ',action:'Все станции пройдены. Покажи учителю экран с результатом.',tasks:[
+ {type:'choice',q:'Диспетчер записал: 37 + 3 = 50. Он прав?',options:['Нет, здесь ошибка','Да, всё правильно'],a:0,good:'Верно! 7 + 3 = 10, значит, 37 + 3 = 40.',hint:'В числе 37 три десятка, а не четыре.'},
+ {type:'number',q:'Исправь запись диспетчера: 37 + 3 = ?',a:40,good:'Правильно: 40.',hint:'30 + 10 = ...'},
+ {type:'number',q:'Было 38 коробок. После отправления осталось 30. Сколько коробок отправили?',a:8,good:'38 − 30 = 8. Проверка: 30 + 8 = 38.',hint:'Из 38 убери три десятка.'}
+]}];
+const STORE='postal-express-2ndgrade-v3-verified';
+let state={started:false,m:0,t:0,checked:false,selected:null,mistakes:0,firstTry:0,wrongHere:0,finished:false};
+try{const saved=JSON.parse(localStorage.getItem(STORE)||'null');if(saved&&typeof saved.m==='number'&&saved.m>=0&&saved.m<missions.length&&typeof saved.t==='number'&&saved.t>=0&&saved.t<=missions[saved.m].tasks.length){state={...state,...saved,checked:false,selected:null,wrongHere:0};}}catch(e){}
+const $=(s)=>document.querySelector(s);
+function save(){try{localStorage.setItem(STORE,JSON.stringify({...state,checked:false,selected:null,wrongHere:0}));}catch(e){}}
+function trainArt(progress=0){const x=75+Math.round(progress*600);return `<div class="route" aria-label="Маршрут поезда: три станции"><svg viewBox="0 0 760 185" role="img" aria-label="Поезд и три станции"><defs><linearGradient id="sky" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#e7f7f7"/><stop offset="1" stop-color="#fff0d4"/></linearGradient></defs><rect width="760" height="185" rx="15" fill="url(#sky)"/><path d="M0 133 Q160 82 315 127 T760 124 L760 185 L0 185Z" fill="#b7d8be"/><path d="M0 153 Q140 125 278 158 T760 151 L760 185 L0 185Z" fill="#89c6a4"/><path d="M28 153 H729" stroke="#6e7f83" stroke-width="7" stroke-linecap="round"/><path d="M28 164 H729" stroke="#d6e0dd" stroke-width="4" stroke-dasharray="11 13"/>${[187,381,591].map((a,i)=>`<g><rect x="${a-14}" y="79" width="28" height="64" rx="5" fill="#6f9d97"/><rect x="${a-31}" y="58" width="62" height="32" rx="8" fill="${progress>(i)/3?'#eeba69':'#fff'}" stroke="#6b8a88" stroke-width="3"/><text x="${a}" y="80" font-size="24" font-weight="900" text-anchor="middle" fill="#263a48">${i+1}</text></g>`).join('')}<g transform="translate(${x-58} 96)"><rect width="106" height="49" rx="11" fill="#0b7d85"/><rect x="72" y="-25" width="34" height="34" rx="7" fill="#e69b45"/><rect x="79" y="-18" width="20" height="15" rx="2" fill="#fff8e7"/><rect x="16" y="10" width="47" height="22" rx="4" fill="#c6e9e3"/><circle cx="25" cy="51" r="11" fill="#29404a"/><circle cx="83" cy="51" r="11" fill="#29404a"/></g><g fill="#fafcfb"><circle cx="101" cy="32" r="15"/><circle cx="115" cy="30" r="20"/><circle cx="131" cy="35" r="13"/></g></svg></div>`}
+function miniMap(done,total){return `<div class="mission-route" aria-label="Маршрут игры"><span class="mini-train" aria-hidden="true">🚂</span><div class="mini-rail"><div class="mini-fill" style="width:${(done/total)*100}%"></div></div><span class="mini-target" aria-hidden="true">📦</span><span class="mission-progress">${done}/${total}</span></div>`}function chips(){let done=state.finished?3:state.m;return `<div class="steps">${missions.map((m,i)=>`<span class="step ${i<done?'done':i===done?'active':''}">${i<done?'✓ ':''}${i+1}. ${m.title}</span>`).join('')}</div>`}
+function esc(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function render(){let box=$('#app');if(!state.started){box.innerHTML=`<span class="smallcap">Игровой урок • 45 минут</span><h1>Доставь посылки на три станции</h1><p class="lead">Поезд тронется, когда ты выполнишь задания. Сначала прочитай, затем подумай и только потом нажми на ответ.</p>${trainArt(0)}${chips()}<div class="checkpoint"><strong>Правило диспетчера:</strong><p>Прочитай → Подумай → Ответь → Проверь.</p></div><button type="button" class="btn" id="start">Начать маршрут</button>`;$('#start').onclick=()=>{state.started=true;save();render()};return;}
+if(state.finished){let total=missions.reduce((a,m)=>a+m.tasks.length,0);box.innerHTML=`<span class="smallcap">Маршрут завершён</span><h1>Все три станции открыты!</h1>${trainArt(1)}<div class="badge">✓ Выполнено заданий: ${total} из ${total}</div><p>Ответов без исправлений: <b>${state.firstTry} из ${total}</b>. Ошибок при попытках: <b>${state.mistakes}</b>.</p><div class="checkpoint"><strong>Расскажи учителю:</strong><p>Как дополнить число до круглого десятка? Как понять, какое действие выбрать в задаче?</p></div><button class="btn" id="again">Пройти маршрут ещё раз</button>`;$('#again').onclick=reset;return;}
+const m=missions[state.m];if(state.t>=m.tasks.length){box.innerHTML=`<span class="smallcap">Станция ${state.m+1} готова</span><h1>Отлично, этап выполнен</h1>${trainArt((state.m+1)/3)}${chips()}<div class="checkpoint"><strong>Сейчас не спеши дальше.</strong><p>${esc(m.action)}</p></div><div class="controls"><button class="btn" id="nextStation">${state.m===2?'Открыть результат':'Перейти к станции '+(state.m+2)}</button></div>`;$('#nextStation').onclick=()=>{if(state.m===2){state.finished=true}else{state.m++;state.t=0}save();render()};return;}
+const item=m.tasks[state.t];const done=missions.slice(0,state.m).reduce((a,x)=>a+x.tasks.length,0)+state.t;const total=missions.reduce((a,x)=>a+x.tasks.length,0);box.innerHTML=`<span class="smallcap">Станция ${state.m+1} из 3</span><h2>${esc(m.title)}</h2><div class="taskmeta">${esc(m.subtitle)} · Задание ${state.t+1} из ${m.tasks.length}</div>${miniMap(done,total)}<div class="tasktext">${esc(item.q)}</div><div id="taskForm"><div id="answerArea">${item.type==='choice'?`<div class="options" role="radiogroup" aria-label="Выбери ответ">${item.options.map((v,i)=>`<button type="button" class="option" data-opt="${i}" role="radio" aria-checked="false"><span class="circle"></span><span>${esc(v)}</span></button>`).join('')}</div>`:`<label class="small" for="num">Запиши только число:</label><br><input id="num" class="numinput" type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]*" placeholder="?" aria-label="Введи ответ числом">`}</div><div id="fb" aria-live="polite"></div><div class="controls"><button class="btn" id="check" type="button">Проверить ответ</button><span class="hint">Не торопись. Проверь себя.</span></div></div>`;
+if(item.type==='choice')document.querySelectorAll('.option').forEach(b=>b.addEventListener('click',()=>{state.selected=+b.dataset.opt;document.querySelectorAll('.option').forEach(x=>{let sel=x===b;x.classList.toggle('selected',sel);x.setAttribute('aria-checked',sel?'true':'false');x.querySelector('.circle').textContent=sel?'✓':'';});}));
+let answerConfirmed=false;
+function checkAnswer(){
+  // The check action is a real button click, not a native form submission.
+  // This means empty fields and preview environments get a visible response.
+  if(answerConfirmed){render();return;}
+  let value;
+  if(item.type==='choice'){
+    if(state.selected===null){feedback('Сначала нажми на один из вариантов ответа, затем проверь его.','bad');return;}
+    value=state.selected;
+  }else{
+    const raw=$('#num').value.trim();
+    if(!/^-?\d+$/.test(raw)){
+      feedback('Сначала запиши ответ целым числом, а затем нажми «Проверить ответ».','bad');
+      $('#num').focus();return;
+    }
+    value=Number(raw);
+  }
+  if(value===item.a){
+    if(state.wrongHere===0)state.firstTry++;
+    state.t++;
+    state.selected=null;
+    state.wrongHere=0;
+    save();
+    answerConfirmed=true;
+    feedback('Верно! '+item.good,'good');
+    $('#check').textContent='Следующее задание →';
+    document.querySelectorAll('.option').forEach(b=>b.disabled=true);
+    const num=$('#num');if(num)num.disabled=true;
+    $('.hint').textContent='Ответ принят. Нажми «Следующее задание».';
+  }else{
+    state.mistakes++;
+    state.wrongHere++;
+    save();
+    feedback(state.wrongHere>=2?'Подсказка: '+item.hint:'Пока не совпало. Прочитай условие ещё раз и попробуй по-другому.','bad');
+    // Keep the answer editable and allow another check.
+  }
+}
+$('#check').addEventListener('click',checkAnswer);
+if(item.type==='number')$('#num').addEventListener('keydown',e=>{
+  if(e.key==='Enter'){e.preventDefault();checkAnswer();}
+});
+}
+function feedback(message,kind){$('#fb').innerHTML=`<div class="feedback ${kind}">${esc(message)}</div>`;}
+function reset(){if(confirm('Начать весь маршрут заново?')){state={started:false,m:0,t:0,checked:false,selected:null,mistakes:0,firstTry:0,wrongHere:0,finished:false};save();render();}}
+$('#resetButton').onclick=reset;render();
+</script></body></html>

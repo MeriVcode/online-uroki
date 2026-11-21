@@ -19,13 +19,29 @@
 .how{margin:35px 0 60px;background:#fff;border-radius:22px;border:1px solid #ece7e1;padding:27px 31px}.how-head{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-bottom:13px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.step{display:flex;gap:12px;font-size:14px;color:#637184}.num{border-radius:50%;background:#eef2f9;color:#38527e;font-weight:850;flex:0 0 30px;height:30px;display:grid;place-items:center}.step b{display:block;color:#2c3c52;font-size:15px}.small-note{font-size:13px;color:#8994a1;margin:18px 0 0}.footer{background:#fffdf9;border-top:1px solid #e8e6e0;padding:19px 0;color:#7b8797;font-size:12px}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,15px);z-index:50;background:#203852;color:white;padding:13px 19px;border-radius:12px;box-shadow:0 10px 30px #20385244;opacity:0;pointer-events:none;transition:.2s;max-width:min(500px,90vw);text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(1px,1px,1px,1px)}
 @media(max-width:1050px){.subject-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.filters{grid-template-columns:1fr 1fr}.hero{grid-template-columns:1fr 200px}.hero-graphic{transform:scale(.78);transform-origin:center left}}
 @media(max-width:650px){.wrap{padding:0 15px}.top-inner{min-height:70px}.top-note{display:none}.brand{font-size:15px}.top-action{font-size:12px;padding:8px}.hero{margin-top:18px;padding:25px 22px;grid-template-columns:1fr}.hero-graphic{display:none}.hero p{font-size:14px}.section-bar{margin-top:24px;align-items:center}.section-bar h2{font-size:23px}.subject-grid{gap:9px}.subject-tile{gap:9px;padding:13px 10px;border-radius:13px}.subject-tile[aria-pressed="true"]{padding:12px 9px}.subject-icon{flex-basis:37px;height:37px;font-size:21px;border-radius:10px}.subject-name{font-size:13px}.subject-desc{font-size:11px}.filters{grid-template-columns:1fr}.card-grid{grid-template-columns:1fr}.card .thumb{height:190px}.catalog-info{font-size:12px}.steps{grid-template-columns:1fr;gap:15px}.how{padding:22px 19px}.status{white-space:normal;text-align:right}}
+
+/* Отдельные экраны разделов внутри одного HTML — без изменения ссылок на уроки. */
+.page-home #catalog{display:none}
+.page-category .hero,.page-category #subjects,.page-category #how{display:none}
+.page-category #catalog{display:block;min-height:calc(100vh - 170px);padding-top:28px;padding-bottom:70px}
+.crumbs{margin:2px 0 20px}
+.back-link{background:#fff;border:1px solid #dae2ef;border-radius:11px;padding:10px 16px;font-weight:750;color:#344c7e}
+.back-link:hover{background:#eef3fb}
+.subject-page-head{background:linear-gradient(115deg,#e8eef7,#f4f0e8);border-radius:22px;padding:27px 33px;margin-bottom:21px;border:1px solid #e0e5ef}
+.page-eyebrow{display:block;text-transform:uppercase;font-size:11px;letter-spacing:1.4px;font-weight:800;color:#667b96}
+.subject-page-title{font-size:clamp(29px,4vw,42px);margin:8px 0 10px;line-height:1.2}
+.subject-page-title small{font-family:Arial,sans-serif;font-size:16px;font-weight:500;color:#748398;letter-spacing:0}
+.subject-page-description{margin:0;color:#5d7087;font-size:15px}
+.page-category .filters{margin-top:0}
+#subjectFilterField[hidden]{display:none}
+@media(max-width:650px){.page-category #catalog{padding-top:16px}.subject-page-head{padding:23px 20px}.subject-page-title{font-size:29px}.back-link{width:100%;text-align:left}}
 </style>
 </head>
-<body>
+<body class="page-home">
 <header class="top"><div class="wrap top-inner"><a href="./" class="brand"><span class="brand-logo" aria-hidden="true">▦</span>Моя библиотека онлайн-уроков</a><div class="top-side"><span class="top-note">Рабочий каталог репетитора</span><a class="top-action" href="#how">Как добавить урок</a></div></div></header>
 <main class="wrap">
 <section class="hero"><div><div class="eyebrow">Мой рабочий кабинет · 1–4 классы</div><h1>Нужный урок —<br>за пару секунд</h1><p>Игры, тренажёры и онлайн-доски теперь собраны по предметам. Выберите раздел, откройте материал или скопируйте ссылку ученику.</p><div class="hero-actions"><a class="btn dark" href="#subjects">Выбрать предмет ↓</a><a class="btn soft" id="uploadTop" href="https://github.com/MeriVcode/online-uroki/upload/main" target="_blank" rel="noopener">Добавить HTML ↗</a></div></div><div class="hero-graphic" aria-hidden="true"><div class="folder a"><span>∑</span></div><div class="folder b"><span>✦</span></div><div class="folder c"><span>А</span></div></div></section>
-<section id="subjects" aria-label="Разделы библиотеки"><div class="section-bar"><div><h2>Разделы библиотеки</h2></div><div id="syncStatus" class="status" role="status" aria-live="polite">Загрузка материалов…</div></div><p class="section-intro">Выберите предмет — ниже появятся только его материалы. Файлы на GitHub переносить не нужно.</p>
+<section id="subjects" aria-label="Разделы библиотеки"><div class="section-bar"><div><h2>Разделы библиотеки</h2></div><div id="syncStatus" class="status" role="status" aria-live="polite">Загрузка материалов…</div></div><p class="section-intro">Откройте нужный предмет — появится отдельная страница с его материалами. Файлы на GitHub переносить не нужно.</p>
 <div class="subject-grid" id="subjectTiles">
 <button type="button" class="subject-tile" data-category="all" aria-pressed="true"><span class="subject-icon">▦</span><span class="subject-details"><span class="subject-name">Все материалы <span class="subject-count" data-count="all"></span></span><span class="subject-desc">Полный каталог</span></span></button>
 <button type="button" class="subject-tile" data-category="Математика" aria-pressed="false"><span class="subject-icon">∑</span><span class="subject-details"><span class="subject-name">Математика <span class="subject-count" data-count="Математика"></span></span><span class="subject-desc">Задачи, вычисления, геометрия</span></span></button>
@@ -34,8 +50,8 @@
 <button type="button" class="subject-tile" data-category="Окружающий мир" aria-pressed="false"><span class="subject-icon">☘</span><span class="subject-details"><span class="subject-name">Окружающий мир <span class="subject-count" data-count="Окружающий мир"></span></span><span class="subject-desc">Природа, человек, исследования</span></span></button>
 <button type="button" class="subject-tile" data-category="favorites" aria-pressed="false"><span class="subject-icon">☆</span><span class="subject-details"><span class="subject-name">Избранное <span class="subject-count" data-count="favorites"></span></span><span class="subject-desc">Быстрый доступ к нужному</span></span></button>
 </div></section>
-<section id="catalog"><div class="section-bar"><div><h2 id="catalogTitle">Все материалы <small id="totalCount"></small></h2></div></div>
-<div class="filters"><label class="field"><span class="visually-hidden">Поиск по названию и теме</span><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><input id="search" type="search" placeholder="Поиск по названию или теме…" autocomplete="off"></label><label><span class="visually-hidden">Класс</span><select id="grade"><option value="">Все классы</option><option value="1">1 класс</option><option value="2">2 класс</option><option value="3">3 класс</option><option value="4">4 класс</option></select></label><label><span class="visually-hidden">Предмет</span><select id="subject"><option value="">Все предметы</option></select></label><label><span class="visually-hidden">Тип материала</span><select id="type"><option value="">Все форматы</option></select></label></div>
+<section id="catalog" aria-label="Материалы выбранного раздела"><nav class="crumbs" aria-label="Навигация"><button type="button" class="back-link" id="backToSubjects">← К разделам библиотеки</button></nav><div class="subject-page-head"><span class="page-eyebrow">Моя библиотека · Подборка материалов</span><h1 id="catalogTitle" class="subject-page-title">Все материалы <small id="totalCount"></small></h1><p id="pageDescription" class="subject-page-description">Выберите нужный материал и откройте его для занятия.</p></div>
+<div class="filters"><label class="field"><span class="visually-hidden">Поиск по названию и теме</span><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><input id="search" type="search" placeholder="Поиск по названию или теме…" autocomplete="off"></label><label><span class="visually-hidden">Класс</span><select id="grade"><option value="">Все классы</option><option value="1">1 класс</option><option value="2">2 класс</option><option value="3">3 класс</option><option value="4">4 класс</option></select></label><label id="subjectFilterField"><span class="visually-hidden">Предмет</span><select id="subject"><option value="">Все предметы</option></select></label><label><span class="visually-hidden">Тип материала</span><select id="type"><option value="">Все форматы</option></select></label></div>
 <div class="catalog-info"><span id="visibleCount">Подбираем материалы…</span><button class="btn soft" id="resetFilter" type="button">Сбросить фильтры</button></div>
 <div id="cards" class="card-grid" aria-live="polite"></div></section>
 <section id="how" class="how"><div class="how-head"><h2>Как добавить новый урок</h2><a class="btn soft" id="uploadBottom" href="https://github.com/MeriVcode/online-uroki/upload/main" target="_blank" rel="noopener">Перейти к загрузке ↗</a></div><div class="steps"><div class="step"><span class="num">1</span><div><b>Откройте свой репозиторий</b>Нажмите «Добавить HTML» — откроется загрузка в online-uroki.</div></div><div class="step"><span class="num">2</span><div><b>Загрузите готовый HTML</b>Размещайте файлы в корне репозитория рядом с index.html и подтвердите Commit changes.</div></div><div class="step"><span class="num">3</span><div><b>Обновите библиотеку</b>Новая карточка появится автоматически. Проверьте раздел и скопируйте ссылку.</div></div></div><p class="small-note">Файлы не перемещаются, поэтому действующие ссылки на уроки сохраняются. Если предмет определить не удалось, материал будет в «Не распределено», пока вы не укажете его в метаданных HTML. Избранное сохраняется только в этом браузере. Не размещайте в публичной библиотеке персональные данные детей.</p></section>
@@ -85,10 +101,44 @@ function renderTiles(){const counts=Object.fromEntries(CATEGORIES.map(c=>[c,0]))
 let unmatched=document.querySelector('[data-category="Не распределено"]');if((counts['Не распределено']||0)>0&&!unmatched){const btn=document.createElement('button');btn.type='button';btn.className='subject-tile';btn.dataset.category='Не распределено';btn.setAttribute('aria-pressed','false');btn.innerHTML='<span class="subject-icon">?</span><span class="subject-details"><span class="subject-name">Не распределено <span class="subject-count" data-count="Не распределено"></span></span><span class="subject-desc">Предмет пока не определён</span></span>';document.querySelector('#subjectTiles').append(btn);btn.addEventListener('click',()=>setCategory(btn.dataset.category));}else if(!counts['Не распределено']&&unmatched){unmatched.remove();if(activeCategory==='Не распределено')activeCategory='all';}
 if((counts['Не распределено']||0)>0){document.querySelector('[data-count="Не распределено"]').textContent=`· ${counts['Не распределено']}`;}
 for(const b of document.querySelectorAll('[data-category]'))b.setAttribute('aria-pressed',String(activeCategory===b.dataset.category));}
-function setCategory(category){activeCategory=category;$('search').value='';$('grade').value='';$('type').value='';$('subject').value=CATEGORIES.includes(category)&&category!=='Не распределено'?category:category==='Не распределено'?category:'';render();document.querySelector('#catalog').scrollIntoView({behavior:'smooth',block:'start'});}
+const categoryDescriptions={
+ 'all':'Все онлайн-доски, игры и тренажёры в одном каталоге.',
+ 'Математика':'Вычисления, текстовые задачи, геометрия, игры и тренажёры.',
+ 'Русский язык':'Орфография, состав слова, части речи и тренировочные задания.',
+ 'Литературное чтение':'Чтение, понимание текста, пересказы и работа с произведениями.',
+ 'Окружающий мир':'Природа, человек и исследовательские задания.',
+ 'favorites':'Твои отмеченные материалы для быстрого доступа.',
+ 'Не распределено':'Материалы, для которых пока не определён предмет.'
+};
+function setCategory(category){
+ if(!['all','favorites',...CATEGORIES].includes(category))return;
+ const target='#section='+encodeURIComponent(category);
+ if(location.hash!==target){try{history.pushState(null,'',target);}catch(e){location.hash=target;}}
+ applyRoute();
+}
+function applyRoute(){
+ let next=null;
+ if(location.hash.startsWith('#section=')){
+   try{next=decodeURIComponent(location.hash.slice('#section='.length));}catch(e){}
+ }
+ const valid=['all','favorites',...CATEGORIES];
+ const showCategory=valid.includes(next);
+ activeCategory=showCategory?next:'all';
+ document.body.classList.toggle('page-home',!showCategory);
+ document.body.classList.toggle('page-category',showCategory);
+ $('search').value='';$('grade').value='';$('type').value='';$('subject').value='';
+ $('subjectFilterField').hidden=showCategory && !['all','favorites'].includes(activeCategory);
+ $('pageDescription').textContent=categoryDescriptions[activeCategory]||'Выберите материал для занятия.';
+ document.title=(showCategory?(activeCategory==='all'?'Все материалы':activeCategory==='favorites'?'Избранное':activeCategory)+' · ':'')+'Моя библиотека онлайн-уроков';
+ render();
+ if(showCategory)window.scrollTo({top:0,behavior:'instant'});
+}
+$('backToSubjects').addEventListener('click',()=>{try{history.pushState(null,'',location.href.split('#')[0]);}catch(e){location.hash='';}applyRoute();window.scrollTo({top:0,behavior:'instant'});});
+window.addEventListener('hashchange',applyRoute);
+window.addEventListener('popstate',applyRoute);
 function render(){renderTiles();const query=lower($('search').value).trim(),grade=$('grade').value,subj=$('subject').value,type=$('type').value;
-const data=all.filter(x=>(activeCategory!=='favorites'||favorites.has(x.path))&&(!grade||String(x.grade).split(/[,;\s]+/).includes(grade))&&(!subj||x.subject===subj)&&(!type||x.type===type)&&(!query||lower([x.title,x.description,x.subject,x.type,x.grade,...x.tags].join(' ')).includes(query))).sort((a,b)=>a.title.localeCompare(b.title,'ru'));
-let title=activeCategory==='favorites'?'Избранное':activeCategory!=='all'?activeCategory:'Все материалы';$('catalogTitle').firstChild.textContent=title+' ';$('totalCount').textContent=`· ${all.length}`;$('visibleCount').textContent=data.length?`Показано материалов: ${data.length}`:'Материалы не найдены';
+const data=all.filter(x=>(activeCategory==='all'||activeCategory==='favorites'||x.subject===activeCategory)&&(activeCategory!=='favorites'||favorites.has(x.path))&&(!grade||String(x.grade).split(/[,;\s]+/).includes(grade))&&(!subj||x.subject===subj)&&(!type||x.type===type)&&(!query||lower([x.title,x.description,x.subject,x.type,x.grade,...x.tags].join(' ')).includes(query))).sort((a,b)=>a.title.localeCompare(b.title,'ru'));
+let title=activeCategory==='favorites'?'Избранное':activeCategory!=='all'?activeCategory:'Все материалы';$('catalogTitle').firstChild.textContent=title+' ';$('totalCount').textContent=`· ${data.length}`;$('visibleCount').textContent=data.length?`Показано материалов: ${data.length}`:'Материалы не найдены';
 const cards=$('cards');cards.replaceChildren();if(!data.length){cards.innerHTML='<div class="empty"><strong>Пока здесь пусто</strong>Выберите другой предмет, измените условия поиска или откройте все материалы.</div>';return;}
 for(const x of data){const card=document.createElement('article');card.className='card';const url=materialURL(x.path);const image=x.cover?`<img src="${safe(coverURL(x.cover))}" loading="lazy" alt="Обложка: ${safe(x.title)}" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'no-img',textContent:'✦'}))">`:'<span class="no-img" aria-hidden="true">✦</span>';const isFav=favorites.has(x.path);card.innerHTML=`<div class="thumb">${image}<button type="button" class="favorite" data-favorite="${safe(x.path)}" aria-pressed="${isFav}" title="${isFav?'Убрать из избранного':'Добавить в избранное'}" aria-label="${isFav?'Убрать из избранного':'Добавить в избранное'}: ${safe(x.title)}">${isFav?'★':'☆'}</button></div><div class="body"><div class="chips"><span class="chip">${safe(x.grade?x.grade+' класс':'Класс не указан')}</span><span class="chip green">${safe(x.subject)}</span><span class="chip">${safe(x.type||'Интерактив')}</span></div><h3>${safe(x.title)}</h3><p>${safe(x.description||'Интерактивный материал для онлайн-занятия.')}</p><div class="foot"><a class="btn open" href="${safe(url)}" target="_blank" rel="noopener noreferrer">Открыть ↗</a><button type="button" class="btn copy" data-link="${safe(url)}" aria-label="Скопировать ссылку на ${safe(x.title)}">⧉ Скопировать</button></div></div>`;cards.append(card);}
 }
@@ -96,8 +146,8 @@ let toastTimer;function toast(msg){const el=$('toast');el.textContent=msg;el.cla
 async function copyLink(link){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(link);toast('Ссылка скопирована — можно отправлять ученику');return;}}catch(e){}const el=document.createElement('textarea');el.value=link;el.style.cssText='position:fixed;opacity:0;left:-9999px';document.body.append(el);el.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}el.remove();if(ok)toast('Ссылка скопирована');else window.prompt('Скопируйте ссылку:',link);}
 document.querySelector('#subjectTiles').addEventListener('click',e=>{const tile=e.target.closest('[data-category]');if(tile)setCategory(tile.dataset.category);});
 $('cards').addEventListener('click',e=>{const fav=e.target.closest('[data-favorite]');if(fav){const p=fav.dataset.favorite;if(favorites.has(p))favorites.delete(p);else favorites.add(p);try{localStorage.setItem(favKey,JSON.stringify([...favorites]));}catch(e){}render();toast(favorites.has(p)?'Добавлено в избранное':'Удалено из избранного');return;}const btn=e.target.closest('[data-link]');if(btn)copyLink(btn.dataset.link);});
-['search','grade','subject','type'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',()=>{if(id==='subject'){activeCategory=$('subject').value||'all';}render();}));
-$('resetFilter').addEventListener('click',()=>{activeCategory='all';$('search').value='';$('grade').value='';$('subject').value='';$('type').value='';render();});
+['search','grade','subject','type'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));
+$('resetFilter').addEventListener('click',()=>{$('search').value='';$('grade').value='';$('subject').value='';$('type').value='';render();});
 async function discover(){let initial=JSON.parse($('starter-data').textContent).map(cleanedRecord).filter(Boolean);try{const cached=JSON.parse(localStorage.getItem(cacheKey)||'null');if(Array.isArray(cached)&&cached.length>initial.length)initial=cached.map(cleanedRecord).filter(Boolean);}catch(e){}
 all=initial;updateFilters();render();$('syncStatus').textContent='Загружаем обновления…';
 try{const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),2500);try{const r=await fetch(new URL('catalog.json',document.baseURI),{cache:'no-cache',signal:ctrl.signal});if(r.ok){const saved=await r.json();if(Array.isArray(saved)&&saved.length>initial.length)initial=saved.map(cleanedRecord).filter(Boolean);}}finally{clearTimeout(timer);}}catch(e){}
@@ -107,6 +157,7 @@ if(!live)paths=initial.map(x=>x.path);
 all=paths.map(p=>cleanedRecord(remembered.get(p)||fallbackRecord(p)));updateFilters();render();$('syncStatus').textContent=live?'Синхронизировано с GitHub':isPages?'Показаны сохранённые материалы':'Предпросмотр каталога';$('syncStatus').classList.toggle('warn',!live);
 if(live){const items=[...all];let next=0;async function worker(){while(next<items.length){const i=next++;items[i]=cleanedRecord(await getMetadata(items[i]));if(i%4===0){all=[...items];updateFilters();render();}}}await Promise.all(Array.from({length:Math.min(4,items.length)},()=>worker()));all=items;updateFilters();render();try{localStorage.setItem(cacheKey,JSON.stringify(items));}catch(e){}}
 }
+applyRoute();
 discover();
 </script>
 </body>
